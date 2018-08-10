@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col">
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-sm-6">
+          <button
+           type="submit" 
+           class="btn btn-success btn-block mb-3"
+           [disabled]="!recipeForm.valid">
+           Save <i class="fa fa-save ml-1"></i>
+          </button>
+        </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-danger btn-block mb-3" (click)="onCancel()">Cancel <i class="fa fa-ban ml-1"></i></button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+             type="text" 
+             id="name" 
+             formControlName="name" 
+             class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="imagePath">Image URL</label>
+            <input
+             type="text" 
+             id="imagePath" 
+             formControlName="imagePath" 
+             class="form-control"
+             #imagePath>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <img [src]="imagePath.value" class="img-fluid">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+             type="text" 
+             id="description" 
+             formControlName="description" 
+             class="form-control"
+             rows="6"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3" formArrayName="ingredients">
+          <!-- <div
+           class="row" 
+           *ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index"
+           [formGroupName]="i"> -->
+           <!-- for some reason when using recipeForm.get('ingredients').controls i'm getting an error when using ng build (dashdash)prod (dashdash)aot; with the solution below, recipeForm.get('ingredients').value, when using value instead of controls this HTML file is not failing during ng build for production using ahead of time compilation -->
+          <div
+           class="row" 
+           *ngFor="let ingredientCtrl of recipeForm.get('ingredients').value; let i = index"
+           [formGroupName]="i">
+            <div class="col-sm-6 mb-1">
+              <input
+               type="text" 
+               class="form-control"
+               placeholder="Ingredient"
+               formControlName="name">
+            </div>
+            <div class="col-sm-3 mb-1">
+              <input
+               type="number" 
+               class="form-control"
+               placeholder="Amount"
+               formControlName="amount">
+            </div>
+            <div class="col-sm-3 mb-1">
+              <button
+               type="button" 
+               class="btn btn-danger btn-block"
+               (click)="onDeleteIngredient(i)">
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col">
+              <button
+               type="button"
+               class="btn btn-success btn-block" 
+               (click)="onAddIngredient()">
+               Add Ingredient <i class="fa fa-plus-square-o ml-1"></i>
+               <!-- we need to make sure to add the type="button" so the form won't get submitted each time the Add Ingredient button is clicked -->
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

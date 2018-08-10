@@ -1,0 +1,187 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* LINKS OVERWRITTEN */
+
+a:link,
+a:visited {
+  color: #333 !important;
+}
+
+a:hover,
+a:active {
+  color: #666 !important;
+}
+
+/* ACTIVE CLASSES */
+
+.nav-item .active {
+  font-weight: 500 !important;
+  border-bottom: #42d4cb solid 2px;
+}
+
+.recipe-list .active {
+  background-color: #dcdcdc !important;
+  border: #dcdcdc !important;
+}
+
+/* BUTTONS OVERWRITTEN */
+
+.btn-primary {
+  background-color: #f8d56d !important;
+  border-color: #f8d56d !important;
+}
+
+.btn-primary:active,
+.btn-primary:hover {
+  background-color: #e4c565 !important;
+  border-color: #e4c565 !important;
+}
+
+.btn-outline-primary {
+  color: #f8d56d !important;
+  border-color: #f8d56d !important;
+}
+
+.btn-outline-primary:active,
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background-color: #f8d56d !important;
+  border-color: #f8d56d !important;
+}
+
+.btn-success {
+  background-color: #42d4cb !important;
+  border-color: #42d4cb !important;
+}
+
+.btn-success:active,
+.btn-success:hover {
+  background-color: #4fa6a2 !important;
+  border-color: #4fa6a2 !important;
+}
+
+.btn-outline-success {
+  color: #42d4cb !important;
+  border-color: #42d4cb !important;
+}
+
+.btn-outline-success:active,
+.btn-outline-success:hover {
+  color: #fff !important;
+  background-color: #42d4cb !important;
+  border-color: #42d4cb !important;
+}
+
+.btn-danger {
+  background-color: #fe8e9c !important;
+  border-color: #fe8e9c !important;
+}
+
+.btn-danger:active,
+.btn-danger:hover {
+  background-color: #d37c8a !important;
+  border-color: #d37c8a !important;
+}
+
+.btn-outline-danger {
+  color: #fe8e9c !important;
+  border-color: #fe8e9c !important;
+}
+
+.btn-outline-danger:active,
+.btn-outline-danger:hover {
+  color: #fff !important;
+  background-color: #fe8e9c !important;
+  border-color: #fe8e9c !important;
+}
+
+
+
+
+/* .btn-primary {
+  background-color: #5d7fc8 !important;
+  border-color: #5d7fc8 !important;
+}
+
+.btn-primary:active,
+.btn-primary:hover {
+  background-color: #446bbf !important;
+  border-color: #446bbf !important;
+}
+
+.btn-success {
+  background-color: #9ce06a !important;
+  border-color: #9ce06a !important;
+}
+
+.btn-success:active,
+.btn-success:hover {
+  background-color: #80d83f !important;
+  border-color: #80d83f !important;
+}
+
+.btn-danger {
+  background-color: #e55039 !important;
+  border-color: #e55039 !important;
+}
+
+.btn-danger:active,
+.btn-danger:hover {
+  background-color: #df371d !important;
+  border-color: #df371d !important;
+} */
+
+
+
+
+
+
+
+
+
+
+/*
+YELLOW PALLETE
+--------------
+yellowLighter: #ffe48e;
+yellow: #f8d56d;
+yellowDarker: #e4c565;
+
+YELLOW PALLETE
+--------------
+#ffedbe;
+#ffe49c;
+#f0d282;
+#ffda79;
+#ffc72d;
+
+#f8d56d;
+#e4c565;
+
+flamingo: #fe8e9c
+flamingoDarker: #d37c8a;
+
+green: #42d4cb;
+greenDarker: #4fa6a2;
+
+lighter: #62b3b1;
+green: #3f993a;
+darker: #566955;
+
+blue: #22b2d6;
+darkerBlue: #3b4a6b;
+red: #f23557;
+yellow: #f0d43a;
+
+
+GRAY PALLETE
+------------
+lightGray: #dcdcdc;
+lightGrayDarker: #c6c7c6'
+
+gray: #b3b3b3;
+grayDarker: #a8a8a8;
+
+darkGray: #7a7b7b;
+darkGrayDarker: #646565;
+*/

@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">Recipe Book</a>
+    <!-- <a class="navbar-brand" href="#">
+      <img src="../../assets/img/logo.png" alt="Recipe Book" height="100" width="auto">
+    </a> -->
+      
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <!-- <a href="#" class="nav-link" (click)="onSelect('recipe')">Recipes</a> -->
+          <a class="nav-link" routerLink="/recipes" routerLinkActive="active">Recipes</a>
+        </li>
+        <li class="nav-item">
+          <!-- <a href="#" class="nav-link" (click)="onSelect('shopping-list')">Shopping List</a> -->
+          <a class="nav-link" routerLink="/shopping-list" routerLinkActive="active">Shopping List</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <!-- <li class="dropdown" appDropdown>
+          <a href="#" class="nav-link dropdown-toggle" role="button">Manage</a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Save Data</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Fetch Data</a>
+            </li>
+          </ul>
+        </li> -->
+        <!-- <ng-template [ngIf]="!authService.isAuthenticated()"> -->
+        <ng-template [ngIf]="!(authState | async).authenticated">
+        <!-- if it's false, if we're not authenticated, then display these buttons -->
+          <li class="nav-item"><a class="nav-link" routerLink="/signup" routerLinkActive="active">Register</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/signin" routerLinkActive="active">Login</a></li>
+        </ng-template>
+        <!-- <li class="nav-item"><a class="nav-link" style="cursor: pointer;" (click)="onLogout()" *ngIf="authService.isAuthenticated()">Logout</a></li> -->
+        <li class="nav-item"><a class="nav-link" style="cursor: pointer;" (click)="onLogout()" *ngIf="(authState | async).authenticated">Logout</a></li>
+        <!-- <li class="nav-link dropdown" appDropdown *ngIf="authService.isAuthenticated()"> -->
+        <li class="nav-link dropdown" appDropdown *ngIf="(authState | async).authenticated">
+        <!-- if it's true, if we're authenticated, then display these buttons instead -->
+          <a class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;">Manage</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" style="cursor: pointer;" (click)="onSaveData()">Save Data</a>
+            <a class="dropdown-item" style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- [routerLink]="['/recipes']" would work as well -->

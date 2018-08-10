@@ -1,0 +1,24 @@
+<!-- <ng-template [ngIf]="authService.isAuthenticated()"> -->
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-success btn-block" (click)="onNewRecipe()">
+        New Recipe <i class="fa fa-plus-circle ml-1"></i>
+      </button>
+    </div>
+  </div>
+  <hr>
+<!-- </ng-template> -->
+
+<!-- <app-recipe-item
+ *ngFor="let recipeEl of recipes; let i = index"
+ [recipe]="recipeEl"
+ [index]="i"
+ ></app-recipe-item> -->
+<app-recipe-item
+ *ngFor="let recipeEl of (recipeState | async).recipes; let i = index"
+ [recipe]="recipeEl"
+ [index]="i"
+ ></app-recipe-item>
+<!-- with *ngFor the whole component is replicated for each recipe -->
+<!-- recipe between the square brackets is the recipe property in the component we're placing this on, so in the recipe-item component -->
+<!-- in onRecipeSelected() we pass the recipe that was selected as an argument -->

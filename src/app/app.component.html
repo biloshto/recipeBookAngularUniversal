@@ -1,0 +1,16 @@
+<!-- <app-header (featureSelected)="onNavigate($event)"></app-header> -->
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <!-- <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list> -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<!-- router-outlet marks the place where the Angular router should render the component we should load depending on the path we'd add -->
+
+
+<!-- we're using the header only in the app.component so we definitely want to put the header component in a core module, as well as the home component as we're only using it in a root level -->

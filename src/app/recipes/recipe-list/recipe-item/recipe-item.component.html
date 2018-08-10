@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col recipe-list">
+    <!-- <a
+     style="cursor: pointer;"
+     class="list-group-item clearfix mb-1"
+     (click)="onSelected()"> -->
+    <a
+     style="cursor: pointer;"
+     [routerLink]="[index]"
+     routerLinkActive="active"
+     class="list-group-item clearfix mb-1">
+      <div class="media media-body">
+        <div class="media-body">
+          <h5 class="mt-0">{{ recipe.name }}</h5>
+          <span>{{ recipe.description }}</span>
+        </div>
+        <img
+         [src]="recipe.imagePath"
+         alt="{{ recipe.name }}"
+         class="img-fluid d-flex align-self-start"
+         style="max-width: 100px;">
+        <!-- src="{{ recipe.imagePath }}" would also work -->
+      </div>
+    </a>
+  </div>
+</div>
+<!-- we want to make sure that whenever this link is clicked we emit an event, informing our parent component that this recipe was selected -->
+
+<!-- <div class="my-1">
+  <a href="#" class="list-group-item clearfix">
+    <div class="row">
+      <div class="col-sm-8">
+        <h5 class="list-group-item-heading">{{ recipe.name }}</h5>
+        <p class="list-group-item-text">{{ recipe.description }}</p>
+      </div>
+      <div class="col-sm-4">
+        <img
+          [src]="recipe.imagePath"
+          alt="{{ recipe.name }}"
+          class="img-fluid"
+        >
+      </div>
+    </div>
+  </a>
+</div> -->
